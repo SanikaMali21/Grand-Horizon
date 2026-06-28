@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon Resort | Luxury Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">Grand Horizon</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rooms">Rooms Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#booking" class="nav-btn">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-overlay">
+            <h1>Experience Luxury Like Never Before</h1>
+            <p>Your paradise destination awaits. Book your premium stay today.</p>
+            <a href="#booking" class="cta-btn">Check Availability</a>
+        </div>
+    </header>
+
+    <section id="about" class="section about-section">
+        <h2>About Our Resort</h2>
+        <p>Located on pristine coastal shores, Grand Horizon Resort blends world-class hospitality with stunning architectural design. For over a decade, we have offered an elite escape featuring private beaches, 5-star dining, and personalized concierge services tailored entirely to your desires.</p>
+    </section>
+
+    <section id="rooms" class="section rooms-section">
+        <h2>Our Suite Collection</h2>
+        <p class="section-subtitle">Select from our award-winning accommodations</p>
+        <div class="room-grid">
+            
+            <div class="room-card">
+                <div class="room-img-container">
+                    <img src="Deluxe-Ocean.jfif" alt="Deluxe Ocean Suite" class="room-card-img">
+                </div>
+                <div class="room-info">
+                    <h3>Deluxe Ocean Suite</h3>
+                    <p>King bed, private balcony, complimentary mini-bar, and panoramic sea views.</p>
+                    <span class="price">$250 / night</span>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-img-container">
+                    <img src="Penthouse.jfif" alt="Penthouse Sanctuary" class="room-card-img">
+                </div>
+                <div class="room-info">
+                    <h3>Penthouse Sanctuary</h3>
+                    <p>Private rooftop infinity pool, personal butler service, and private elevator access.</p>
+                    <span class="price">$500 / night</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="reviews" class="section reviews-section">
+        <h2>Guest Experiences</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"An absolute dream. The Penthouse view was breathtaking and the service was completely unmatched."</p>
+                <h4>- Samantha R.</h4>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Super clean rooms, friendly staff, and the booking system via their website was incredibly fast and seamless!"</p>
+                <h4>- Michael K.</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="section booking-section">
+        <div class="form-container">
+            <h2>Reserve Your Stay</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="guestName">Full Name</label>
+                    <input type="text" id="guestName" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestEmail">Email Address</label>
+                    <input type="email" id="guestEmail" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Suite</label>
+                    <div class="image-selector-grid">
+                        
+                        <label class="room-selector-card">
+                            <input type="radio" name="roomType" value="Deluxe Ocean Suite" required>
+                            <img src="Deluxe-Ocean.jfif" alt="Deluxe Ocean Suite">
+                            <div class="card-details">
+                                <span class="room-name">Deluxe Ocean Suite</span>
+                                <span class="room-price">$250 / night</span>
+                            </div>
+                        </label>
+
+                        <label class="room-selector-card">
+                            <input type="radio" name="roomType" value="Penthouse Sanctuary">
+                            <img src="Penthouse.jfif" alt="Penthouse Sanctuary">
+                            <div class="card-details">
+                                <span class="room-name">Penthouse Sanctuary</span>
+                                <span class="room-price">$500 / night</span>
+                            </div>
+                        </label>
+                        
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkIn">Check-In Date</label>
+                    <input type="date" id="checkIn" required>
+                </div>
+
+                <button type="submit">Confirm Reservation</button>
+            </form>
+            
+            <div id="statusMessage" style="margin-top: 20px; font-weight: bold; text-align: center;"></div>
+        </div>
+    </section>
+
+    <script src="booking.js"></script>
+</body>
+</html>
